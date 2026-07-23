@@ -7,7 +7,7 @@ public class Student {
     private String program;
     private int yearLevel;
 
-    public void Student(String studentId, String fullName, String program, int yearLevel) {
+    public  Student(String studentId, String fullName, String program, int yearLevel) {
         this.studentId = studentId;
         this.fullName = fullName;
         this.program = program;
@@ -82,10 +82,11 @@ public class Course {
 }
 
 public static void main(String[] args){
-    try(Scanner sc = new Scanner(System.in){
-        ArrayList<String> Student = new ArrayList<>();
-        ArrayList<String> courses = new ArrayList<>();
+    try(Scanner sc = new Scanner(System.in)){
+        ArrayList<Student> student = new ArrayList<>();
+        ArrayList<Course> courses = new ArrayList<>();
 
+        int options;
     do{
 
             String menu = """
@@ -94,7 +95,6 @@ public static void main(String[] args){
                 [2] Add Course Offering
                 [3] Enroll Student to Course
                 [4] View All Students
-                [4] View All Students
                 [5] View All Courses
                 [6] View Student Load (Courses + Total Units)
                 [0] Exit
@@ -102,7 +102,7 @@ public static void main(String[] args){
                 """;
             System.out.println(menu);
             System.out.print("Please select your choices: ");
-            int options = sc.nextInt();
+            options = sc.nextInt();
 
             sc.nextLine();
 
@@ -110,30 +110,30 @@ public static void main(String[] args){
                 case 1:
                     System.out.println("You choose the Register Student");
 
-
+                    break;
                 case 2:
                     System.out.println("Add Course Offering");
-
+                    break;
                 case 3:
                     System.out.println(" Enroll Student to Courseg");
-
+                    break;
                 case 4:
                     System.out.println("View All Students");
-
+                    break;
                 case 5:
                     System.out.println("View All Courses");
-
+                    break;
                 case 6:
                     System.out.println("View Student Load (Courses + Total Units)");
-
+                    break;
                 case 0:
                     System.out.println("Thank you for using the enrollment System");
-
                     break;
 
                 default:
                     System.out.println("Invalid input");
+
             }
-        }while(options != 3);
+        }while( options != 0);
     }
 }
