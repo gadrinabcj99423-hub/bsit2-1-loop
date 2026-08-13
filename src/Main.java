@@ -32,7 +32,7 @@ class Car extends Vehicle {
     }
 }
 
-// Subclass: Motorcycle
+
 class Motorcycle extends Vehicle {
     private boolean hasSidecar;
 
